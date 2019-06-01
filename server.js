@@ -1,5 +1,9 @@
 const express = require('express');
 const hbs = require('hbs');
+
+const port = process.env.PORT || 3000;
+
+
 var app = express();
 app.set('vew engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
@@ -35,6 +39,6 @@ app.get('/about', (req, res) =>{
 })
 
 
-app.listen(3000, () =>{
-    console.log('port 3000 is working now');
+app.listen(port, () =>{
+    console.log(`${port}  is working now`);
 });
